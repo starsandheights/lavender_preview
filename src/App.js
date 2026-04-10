@@ -510,9 +510,10 @@ function Intro({ onStart }) {
             margin: "0 0 14px 0",
           }}
         >
-          Love takes many forms, and Lavenderist is built for all of them.
-          Forget labels, find a partner based on something deeper. On your own
-          terms - in your own way - without having to fit any familiar shape.
+          Love takes many forms, and this space is built for all of them. Forget
+          labels, find a partner based on something deeper. Lavenderist draws
+          from wisdom across the world to unlock what really brings humans
+          together. The rest is up to you.
         </p>
         <p
           style={{
@@ -525,7 +526,7 @@ function Intro({ onStart }) {
         >
           Life partners, co-parents, deep companions, or any arrangement that
           makes sense to you. No explanation needed. Whatever it looks like,
-          this is where you'll find a partner who walks your path.
+          this is the place to find a partner who walks your path.
         </p>
       </div>
 
