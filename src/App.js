@@ -512,7 +512,7 @@ function Intro({ onStart }) {
         >
           Love takes many forms, and Lavenderist is built for all of them. A
           space for people who seek to build something intentional together, on
-          their own terms, in their own way, without having to fit a familiar
+          their own terms - in their own way - without having to fit a familiar
           shape.
         </p>
         <p
