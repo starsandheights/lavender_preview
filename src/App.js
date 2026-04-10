@@ -510,9 +510,10 @@ function Intro({ onStart }) {
             margin: "0 0 14px 0",
           }}
         >
-          There are more ways to be with someone than the world has bothered to
-          name. Lavenderist is a platform for the ones that don't come with a
-          script — where partnership means whatever you need it to mean.
+          Love takes many forms, and Lavenderist is built for all of them. A
+          space for people who seek to build something intentional together, on
+          their own terms, in their own way, without having to fit a familiar
+          shape.
         </p>
         <p
           style={{
@@ -523,8 +524,9 @@ function Intro({ onStart }) {
             margin: 0,
           }}
         >
-          Life partners, co-parents, deep companions, or something that doesn't
-          have a name yet. No explaining required.
+          Life partners, co-parents, deep companions, or any arrangement that
+          makes sense to you. No explanation needed. Whatever it looks like,
+          find a partner who walks your path.
         </p>
       </div>
 
