@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+/* ───────────────────── TRADITIONS ───────────────────── */
+
 const TRADITIONS = {
   greek: {
     label: "The Greek Loves",
@@ -156,11 +158,11 @@ const TRADITIONS = {
     label: "Yuánfèn · 缘分",
     region: "China · East Asia",
     header:
-      "In Chinese philosophy, yuánfèn describes the invisible pull between certain people — not random chance, but conditions that have been quietly building. Less like fate. More like readiness.",
+      "In Chinese philosophy, yuánfèn describes the invisible pull between certain people — not random chance, but something that's been quietly building. Less like fate. More like readiness.",
     subheader:
       "Yuánfèn says the right connection arrives when you're ready for it. So what brought you here?",
     learn:
-      "Yuánfèn draws from Buddhist, Confucian, and Daoist thought. Every meaningful encounter results from countless conditions aligning — across time, choices, and small turns that lead somewhere unexpected. The connection was always possible. It just needed the right moment to arrive.",
+      "Yuánfèn draws from Buddhist, Confucian, and Daoist thought. Every meaningful encounter results from countless small turns aligning — across time, choices, and circumstances that lead somewhere unexpected. The connection was always possible. It just needed the right moment.",
     accent: "#4D8A8A",
     bg: "#F3FAFA",
     icon: (s) => (
@@ -248,6 +250,18 @@ const TRADITIONS = {
     ),
   },
 };
+
+const TRADITION_CONTEXT = {
+  greek: "the Greek loves — eight words for the ways humans connect",
+  ayni: "ayni, the Quechua principle that every relationship is a living exchange",
+  ubuntu:
+    "ubuntu, the Southern African idea that you become yourself through the people around you",
+  yuanfen:
+    "yuánfèn, the Chinese understanding that meaningful connection arrives when you're ready",
+  anamcara: "anam cara, the Celtic tradition of the soul friend",
+};
+
+/* ───────────────────── QUESTIONS ───────────────────── */
 
 const QUESTIONS = [
   {
@@ -383,33 +397,47 @@ const QUESTIONS = [
   },
 ];
 
+/* ───────────────────── ARCHETYPES ───────────────────── */
+
 const ARCHETYPES = {
   anchor: {
-    name: "The Anchor",
+    name: "Anchor",
+    article: "an",
+    plural: "Anchors",
     vibe: "Steady hands. Quiet loyalty. Tuesday nights.",
-    description: `Your person doesn't sweep in. They just... stay. They're the kind of steady that doesn't announce itself — it shows up on Tuesday, and Thursday, and the day everything falls apart. They've probably been called "too predictable" by someone who confused fireworks for warmth.\n\nThey don't need grand gestures. They need you to leave your shoes by their door and mean it. The kind of trust that's built in unremarkable moments — the shared errand, the comfortable silence, the "are you still up?" that isn't going anywhere.\n\nYou're looking for someone who makes ordinary life feel like enough. They've been looking for someone who finally agrees.`,
+    description: `An Anchor doesn't sweep in. They stay. The kind of presence that doesn't announce itself — it just shows up on Tuesday, and Thursday, and the day everything falls apart.\n\nThey've probably been called predictable by someone who confused fireworks for warmth. What they actually are is deliberate. The shared errand, the comfortable silence, the midnight check-in that isn't going anywhere except closer.\n\nAn Anchor makes ordinary life feel like enough. And they've been waiting for someone who finally agrees.`,
   },
   witness: {
-    name: "The Witness",
+    name: "Witness",
+    article: "a",
+    plural: "Witnesses",
     vibe: "Sees everything. Says little. Means all of it.",
-    description: `Your person won't try to fix you. They won't offer advice you didn't ask for or rewrite your story with a neater ending. They'll just be there — fully, quietly, without flinching.\n\nThey have this quality where silence isn't uncomfortable. It's just honest. You know that feeling when someone looks at you and you can tell they're actually present? That's their entire thing.\n\nYou've been looking for someone who listens like they mean it. They've been looking for someone worth listening to.`,
+    description: `A Witness won't try to fix you. They won't offer advice you didn't ask for or rewrite your story with a neater ending. They'll just be there — fully, quietly, without looking away.\n\nThey have this quality where silence isn't awkward. It's honest. That feeling when someone is actually present and you can tell? That's their whole thing.\n\nA Witness listens like they mean it. And they've been waiting for someone worth that kind of attention.`,
   },
   architect: {
-    name: "The Architect",
+    name: "Architect",
+    article: "an",
+    plural: "Architects",
     vibe: "Shared plans. Built on purpose. Made to last.",
-    description: `Your person thinks in blueprints — not the controlling kind, the collaborative kind. They want to sit across from you and ask: what are we building? They get genuinely excited about logistics the way some people get excited about first dates.\n\nThey've been frustrated by connections that stayed in the feelings stage and never became anything structural. They don't just want to know you — they want to build something alongside you. A home, a plan, a rhythm that works because two people decided to make it work on purpose.\n\nYou're looking for someone who takes the future seriously. They've been looking for someone to build it with.`,
+    description: `An Architect thinks in blueprints — not the controlling kind, the collaborative kind. They want to sit across from you and ask: what are we building? They get excited about logistics the way other people get excited about first dates.\n\nThey've been let down by connections that stayed in the feelings stage and never became anything real. They don't just want to know you — they want to build something alongside you. A home, a plan, a rhythm that works because two people decided it would.\n\nAn Architect takes the future seriously. They've been waiting for someone to build it with.`,
   },
   spark: {
-    name: "The Spark",
+    name: "Spark",
+    article: "a",
+    plural: "Sparks",
     vibe: "Midnight texts. New neighborhoods. Better questions.",
-    description: `Your person doesn't want to settle down. They want to settle in — to a life that keeps moving, keeps asking questions, keeps surprising both of you.\n\nThey'll send you something at midnight that changes how you think about a topic, take you somewhere you've never heard of, and ask the question nobody else would think to ask. They've been called "a lot" and they've mostly made peace with it. What they haven't found is someone who actually matches that energy.\n\nYou're looking for someone who widens your world. They've been looking for someone who doesn't try to shrink theirs.`,
+    description: `A Spark doesn't want to settle down. They want to settle in — to a life that keeps moving, keeps asking, keeps surprising both of you.\n\nThey'll text you something at midnight that changes how you think about a topic, take you somewhere you've never been, and ask the question nobody else thought to ask. They've been called a lot. They've mostly made peace with it. What they haven't found is someone who actually matches that energy.\n\nA Spark widens your world. And they've been waiting for someone who doesn't try to shrink theirs.`,
   },
   mirror: {
-    name: "The Mirror",
+    name: "Mirror",
+    article: "a",
+    plural: "Mirrors",
     vibe: "Gets it without being told. Already in the room.",
-    description: `Your person has this uncanny habit of saying what you were already thinking. Not because they're reading your mind — because they've been standing in the same place, existentially, for a while now.\n\nThey know what it's like to look at the options everyone else seems fine with and think: there has to be something else. They've done quiet work on themselves — not because they were broken, but because they were curious.\n\nYou've been looking for someone who doesn't need the backstory. They've been looking for exactly the same thing.`,
+    description: `A Mirror has this uncanny way of saying what you were already thinking. Not because they're reading your mind — because they've been standing in the same place, existentially, for a while now.\n\nThey know what it's like to look at the options everyone else seems fine with and think: there has to be something else. They've done quiet work on themselves — not because they were broken, but because they were curious.\n\nA Mirror doesn't need the backstory. They've been waiting for someone who gets that.`,
   },
 };
+
+/* ───────────────────── SCORING ───────────────────── */
 
 function getArchetype(sc) {
   const t = [
@@ -422,14 +450,359 @@ function getArchetype(sc) {
   return t[0][0];
 }
 
+const ARCHETYPE_FORMULAS = {
+  spark: (t) => (t.passion || 0) * 1.2 + (t.growth || 0),
+  witness: (t) => (t.depth || 0) * 1.2 + (t.care || 0) * 0.5,
+  anchor: (t) => (t.stability || 0) + (t.care || 0) * 1.2,
+  architect: (t) => (t.stability || 0) * 1.2 + (t.depth || 0) * 0.5,
+  mirror: (t) => (t.growth || 0) * 1.1 + (t.depth || 0),
+};
+
+function calcTopTraditions(answersArr, archetype) {
+  const formula = ARCHETYPE_FORMULAS[archetype];
+  const contributions = answersArr.map((a, i) => {
+    const total = { passion: 0, depth: 0, stability: 0, growth: 0, care: 0 };
+    a.tagsList.forEach((tags) => {
+      Object.keys(total).forEach((k) => (total[k] += tags[k] || 0));
+    });
+    return { tradition: QUESTIONS[i].tradition, contribution: formula(total) };
+  });
+  contributions.sort((a, b) => b.contribution - a.contribution);
+  return contributions.slice(0, 2).map((c) => c.tradition);
+}
+
+/* ───────────────────── SHARE CARD ART ───────────────────── */
+
+function ShareArt({ archetype, size = 200 }) {
+  const c1 = "#D8CCF0";
+  const c2 = "#B49EDB";
+  const dim = "#8A7BA8";
+  const s = size;
+  const cx = s / 2;
+  const cy = s / 2;
+
+  const stars = Array.from({ length: 24 }, (_, i) => {
+    const seed = (i * 7 + 13) % 100;
+    const x = (seed * s) / 100;
+    const y = (((i * 31 + 7) % 100) * s) / 100;
+    const r = 0.4 + (seed % 3) * 0.3;
+    return (
+      <circle
+        key={i}
+        cx={x}
+        cy={y}
+        r={r}
+        fill="#D8CCF0"
+        opacity={0.15 + (seed % 4) * 0.08}
+      />
+    );
+  });
+
+  const arts = {
+    anchor: (
+      <>
+        <ellipse
+          cx={cx}
+          cy={cy}
+          rx={s * 0.35}
+          ry={s * 0.15}
+          stroke={dim}
+          strokeWidth="0.6"
+          opacity="0.25"
+          fill="none"
+        />
+        <circle
+          cx={cx - s * 0.16}
+          cy={cy}
+          r={s * 0.04}
+          fill={c1}
+          opacity="0.9"
+        />
+        <circle
+          cx={cx + s * 0.16}
+          cy={cy}
+          r={s * 0.04}
+          fill={c2}
+          opacity="0.9"
+        />
+        <line
+          x1={cx - s * 0.12}
+          y1={cy}
+          x2={cx + s * 0.12}
+          y2={cy}
+          stroke={c1}
+          strokeWidth="0.5"
+          opacity="0.3"
+        />
+      </>
+    ),
+    witness: (
+      <>
+        <circle
+          cx={cx}
+          cy={cy}
+          r={s * 0.28}
+          stroke={dim}
+          strokeWidth="0.4"
+          opacity="0.12"
+          fill="none"
+        />
+        <circle
+          cx={cx}
+          cy={cy}
+          r={s * 0.18}
+          stroke={dim}
+          strokeWidth="0.5"
+          opacity="0.18"
+          fill="none"
+        />
+        <circle
+          cx={cx}
+          cy={cy}
+          r={s * 0.08}
+          stroke={dim}
+          strokeWidth="0.6"
+          opacity="0.25"
+          fill="none"
+        />
+        <circle
+          cx={cx - s * 0.06}
+          cy={cy}
+          r={s * 0.03}
+          fill={c1}
+          opacity="0.9"
+        />
+        <circle
+          cx={cx + s * 0.06}
+          cy={cy}
+          r={s * 0.03}
+          fill={c2}
+          opacity="0.9"
+        />
+      </>
+    ),
+    architect: (
+      <>
+        <rect
+          x={cx - s * 0.18}
+          y={cy - s * 0.12}
+          width={s * 0.36}
+          height={s * 0.24}
+          stroke={dim}
+          strokeWidth="0.5"
+          opacity="0.2"
+          fill="none"
+          rx="1"
+        />
+        <line
+          x1={cx}
+          y1={cy - s * 0.12}
+          x2={cx}
+          y2={cy + s * 0.12}
+          stroke={dim}
+          strokeWidth="0.4"
+          opacity="0.15"
+        />
+        <line
+          x1={cx - s * 0.18}
+          y1={cy}
+          x2={cx + s * 0.18}
+          y2={cy}
+          stroke={dim}
+          strokeWidth="0.4"
+          opacity="0.15"
+        />
+        <circle
+          cx={cx - s * 0.09}
+          cy={cy - s * 0.06}
+          r={s * 0.03}
+          fill={c1}
+          opacity="0.9"
+        />
+        <circle
+          cx={cx + s * 0.09}
+          cy={cy + s * 0.06}
+          r={s * 0.03}
+          fill={c2}
+          opacity="0.9"
+        />
+      </>
+    ),
+    spark: (
+      <>
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const a = (i * Math.PI * 2) / 6 - Math.PI / 2;
+          const r = s * 0.22;
+          return (
+            <line
+              key={i}
+              x1={cx}
+              y1={cy}
+              x2={cx + r * Math.cos(a)}
+              y2={cy + r * Math.sin(a)}
+              stroke={dim}
+              strokeWidth="0.4"
+              opacity="0.18"
+            />
+          );
+        })}
+        <circle
+          cx={cx - s * 0.05}
+          cy={cy - s * 0.02}
+          r={s * 0.035}
+          fill={c1}
+          opacity="0.9"
+        />
+        <circle
+          cx={cx + s * 0.07}
+          cy={cy + s * 0.03}
+          r={s * 0.035}
+          fill={c2}
+          opacity="0.9"
+        />
+      </>
+    ),
+    mirror: (
+      <>
+        <line
+          x1={cx}
+          y1={cy - s * 0.25}
+          x2={cx}
+          y2={cy + s * 0.25}
+          stroke={dim}
+          strokeWidth="0.4"
+          opacity="0.15"
+        />
+        <circle
+          cx={cx - s * 0.1}
+          cy={cy - s * 0.04}
+          r={s * 0.035}
+          fill={c1}
+          opacity="0.9"
+        />
+        <circle
+          cx={cx + s * 0.1}
+          cy={cy - s * 0.04}
+          r={s * 0.035}
+          fill={c2}
+          opacity="0.9"
+        />
+        <circle
+          cx={cx - s * 0.1}
+          cy={cy + s * 0.08}
+          r={s * 0.025}
+          fill={c1}
+          opacity="0.35"
+        />
+        <circle
+          cx={cx + s * 0.1}
+          cy={cy + s * 0.08}
+          r={s * 0.025}
+          fill={c2}
+          opacity="0.35"
+        />
+      </>
+    ),
+  };
+
+  return (
+    <svg viewBox={`0 0 ${s} ${s}`} width={s} height={s} fill="none">
+      {stars}
+      {arts[archetype]}
+    </svg>
+  );
+}
+
+/* ───────────────────── STYLES ───────────────────── */
+
 const B = { fontFamily: "'DM Sans', sans-serif" };
 const H = { fontFamily: "'Playfair Display', Georgia, serif" };
+
+/* ───────────────────── LOGO ───────────────────── */
+
+function Logo({ size = 48 }) {
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: "50%",
+        background: "linear-gradient(135deg, #D8CCF0 0%, #B49EDB 100%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 3px 16px rgba(155,127,199,0.18)",
+      }}
+    >
+      <svg
+        width={size * 0.44}
+        height={size * 0.44}
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <ellipse
+          cx="12"
+          cy="12"
+          rx="10"
+          ry="5.5"
+          stroke="#fff"
+          strokeWidth="0.8"
+          opacity="0.45"
+          transform="rotate(-18 12 12)"
+        />
+        <circle cx="8.5" cy="11.2" r="2.4" fill="#fff" opacity="0.9" />
+        <circle cx="15.5" cy="12.8" r="2.4" fill="#fff" opacity="0.9" />
+      </svg>
+    </div>
+  );
+}
+
+/* ───────────────────── BACK ARROW ───────────────────── */
+
+function BackArrow({ onClick, color = "#AEA7B7" }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        background: "none",
+        border: "none",
+        cursor: "pointer",
+        padding: "8px 12px 8px 0",
+        display: "flex",
+        alignItems: "center",
+        gap: 6,
+        ...B,
+        fontSize: 13,
+        color,
+        fontWeight: 400,
+        opacity: 0.7,
+        transition: "opacity 0.2s ease",
+      }}
+      onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+      onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.7")}
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path
+          d="M10 3L5 8L10 13"
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      Back
+    </button>
+  );
+}
+
+/* ───────────────────── INTRO ───────────────────── */
 
 function Intro({ onStart }) {
   const [v, setV] = useState(false);
   useEffect(() => {
     setV(true);
   }, []);
+
   return (
     <div
       style={{
@@ -447,30 +820,8 @@ function Intro({ onStart }) {
           "linear-gradient(175deg, #FAF8FD 0%, #FFFFFF 35%, #FFF 100%)",
       }}
     >
-      <div
-        style={{
-          width: 48,
-          height: 48,
-          borderRadius: "50%",
-          background: "linear-gradient(135deg, #D8CCF0 0%, #B49EDB 100%)",
-          marginBottom: 22,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          boxShadow: "0 3px 16px rgba(155,127,199,0.18)",
-        }}
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <circle
-            cx="12"
-            cy="12"
-            r="9"
-            stroke="#fff"
-            strokeWidth="1.5"
-            opacity="0.9"
-          />
-          <circle cx="12" cy="12" r="3" fill="#fff" opacity="0.7" />
-        </svg>
+      <div style={{ marginBottom: 22 }}>
+        <Logo size={48} />
       </div>
 
       <h1
@@ -507,26 +858,13 @@ function Intro({ onStart }) {
             fontSize: "clamp(15px, 2.5vw, 16px)",
             color: "#5A5363",
             lineHeight: 1.75,
-            margin: "0 0 14px 0",
+            margin: 0,
           }}
         >
           Love takes many forms, and this space is built for all of them. Forget
           labels, find a partner based on something deeper. Lavenderist draws
           from wisdom across the world to unlock what really brings humans
           together. The rest is up to you.
-        </p>
-        <p
-          style={{
-            ...B,
-            fontSize: "clamp(15px, 2.5vw, 16px)",
-            color: "#5A5363",
-            lineHeight: 1.75,
-            margin: 0,
-          }}
-        >
-          Life partners, co-parents, spiritual companions, or any arrangement
-          that doesn't fit the box. No explanation needed. Whatever it looks
-          like, this is the place to find a partner who walks your path.
         </p>
       </div>
 
@@ -597,7 +935,9 @@ function Intro({ onStart }) {
   );
 }
 
-function Question({ q, idx, total, onAnswer }) {
+/* ───────────────────── QUESTION ───────────────────── */
+
+function Question({ q, idx, total, onAnswer, onBack }) {
   const [v, setV] = useState(false);
   const [sel, setSel] = useState(q.multiSelect ? [] : null);
   const [learn, setLearn] = useState(false);
@@ -617,13 +957,18 @@ function Question({ q, idx, total, onAnswer }) {
       );
     } else {
       setSel(i);
-      setTimeout(() => onAnswer([q.options[i].tags]), 400);
+      setTimeout(() => {
+        onAnswer(i, [q.options[i].tags]);
+      }, 400);
     }
   };
 
   const confirm = () => {
     if (q.multiSelect && sel.length > 0) {
-      onAnswer(sel.map((i) => q.options[i].tags));
+      onAnswer(
+        sel,
+        sel.map((i) => q.options[i].tags)
+      );
     }
   };
 
@@ -643,6 +988,7 @@ function Question({ q, idx, total, onAnswer }) {
         background: `linear-gradient(180deg, ${t.bg} 0%, #FFFFFF 50%)`,
       }}
     >
+      {/* Progress bar */}
       <div
         style={{
           position: "fixed",
@@ -667,6 +1013,11 @@ function Question({ q, idx, total, onAnswer }) {
       </div>
 
       <div style={{ maxWidth: 640, margin: "0 auto", width: "100%" }}>
+        {/* Back navigation */}
+        <div style={{ marginBottom: 12 }}>
+          <BackArrow onClick={onBack} color={t.accent} />
+        </div>
+
         <div
           style={{
             display: "flex",
@@ -892,16 +1243,69 @@ function Question({ q, idx, total, onAnswer }) {
   );
 }
 
-function Result({ archetype }) {
+/* ───────────────────── RESULT ───────────────────── */
+
+function Result({ archetype, topTraditions, answers }) {
   const [v, setV] = useState(false);
   const [showE, setShowE] = useState(false);
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
+  const [showShare, setShowShare] = useState(false);
+  const [copied, setCopied] = useState(false);
   const r = ARCHETYPES[archetype];
+  const pars = r.description.split("\n\n");
+
   useEffect(() => {
     setTimeout(() => setV(true), 80);
   }, []);
-  const pars = r.description.split("\n\n");
+
+  const tradLine =
+    topTraditions.length >= 2
+      ? `Your answers drew from ${TRADITION_CONTEXT[topTraditions[0]]} and ${
+          TRADITION_CONTEXT[topTraditions[1]]
+        }.`
+      : topTraditions.length === 1
+      ? `Your answers drew from ${TRADITION_CONTEXT[topTraditions[0]]}.`
+      : "";
+
+  const handleSignup = () => {
+    if (!email.includes("@")) return;
+
+    const payload = {
+      email,
+      archetype,
+      archetypeName: r.name,
+      topTraditions,
+      answers: answers.map((a, i) => ({
+        tradition: QUESTIONS[i].tradition,
+        question: QUESTIONS[i].question,
+        selected: a.selected,
+        selectedText: Array.isArray(a.selected)
+          ? a.selected.map((idx) => QUESTIONS[i].options[idx].text)
+          : [QUESTIONS[i].options[a.selected].text],
+      })),
+      timestamp: new Date().toISOString(),
+    };
+
+    // ── Mailchimp integration point ──
+    // Send `payload` to your Mailchimp API endpoint here.
+    // The payload includes: email, archetype, topTraditions,
+    // per-question answers with tradition + selected text, and timestamp.
+    console.log("Lavenderist waitlist signup:", payload);
+    setDone(true);
+  };
+
+  const shareUrl = `https://lavenderist.com/?r=${archetype}`;
+
+  const handleCopyLink = () => {
+    navigator.clipboard
+      .writeText(shareUrl)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      })
+      .catch(() => {});
+  };
 
   return (
     <div
@@ -930,19 +1334,19 @@ function Result({ archetype }) {
             fontWeight: 500,
           }}
         >
-          Your match archetype
+          Your connection archetype
         </p>
 
         <p
           style={{
             ...H,
-            fontSize: "clamp(18px, 3vw, 22px)",
+            fontSize: "clamp(17px, 2.8vw, 20px)",
             color: "#6B6575",
             margin: "0 0 2px 0",
             fontWeight: 400,
           }}
         >
-          The person you've been looking for is
+          A pattern emerged. It sounds like you need
         </p>
         <h1
           style={{
@@ -955,7 +1359,7 @@ function Result({ archetype }) {
             fontStyle: "italic",
           }}
         >
-          {r.name}
+          {r.article} {r.name}
         </h1>
         <p
           style={{
@@ -963,11 +1367,27 @@ function Result({ archetype }) {
             fontSize: 14,
             color: "#8A7BA8",
             fontStyle: "italic",
-            margin: "0 0 32px 0",
+            margin: "0 0 20px 0",
           }}
         >
           {r.vibe}
         </p>
+
+        {/* Tradition context */}
+        {tradLine && (
+          <p
+            style={{
+              ...B,
+              fontSize: 13,
+              color: "#9E96A8",
+              lineHeight: 1.65,
+              margin: "0 0 32px 0",
+              fontStyle: "italic",
+            }}
+          >
+            {tradLine}
+          </p>
+        )}
 
         <div
           style={{
@@ -995,6 +1415,141 @@ function Result({ archetype }) {
           ))}
         </div>
 
+        {/* Share section */}
+        <div style={{ margin: "0 0 36px 0" }}>
+          <button
+            onClick={() => setShowShare(!showShare)}
+            style={{
+              background: "none",
+              border: "none",
+              ...B,
+              fontSize: 13,
+              color: "#8A7BA8",
+              cursor: "pointer",
+              fontWeight: 500,
+              padding: "4px 0",
+            }}
+          >
+            {showShare ? "— hide" : "↗ Share your result"}
+          </button>
+
+          {showShare && (
+            <div
+              style={{
+                marginTop: 16,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 12,
+              }}
+            >
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: 340,
+                  background:
+                    "linear-gradient(170deg, #1a1520 0%, #2D2A33 60%, #1a1520 100%)",
+                  borderRadius: 16,
+                  padding: "36px 28px 28px",
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginBottom: 20,
+                  }}
+                >
+                  <ShareArt archetype={archetype} size={120} />
+                </div>
+                <p
+                  style={{
+                    ...B,
+                    fontSize: 12,
+                    color: "#8A7BA880",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    margin: "0 0 8px 0",
+                  }}
+                >
+                  I'm looking for
+                </p>
+                <p
+                  style={{
+                    ...H,
+                    fontSize: 28,
+                    color: "#F0ECF4",
+                    fontStyle: "italic",
+                    margin: "0 0 4px 0",
+                    fontWeight: 400,
+                  }}
+                >
+                  {r.article} {r.name}
+                </p>
+                <p
+                  style={{
+                    ...B,
+                    fontSize: 12,
+                    color: "#8A7BA8",
+                    fontStyle: "italic",
+                    margin: "0 0 24px 0",
+                  }}
+                >
+                  {r.vibe}
+                </p>
+                <div
+                  style={{
+                    width: 24,
+                    height: 1,
+                    margin: "0 auto 16px",
+                    background: "#8A7BA830",
+                  }}
+                />
+                <p
+                  style={{
+                    ...B,
+                    fontSize: 11,
+                    color: "#8A7BA8",
+                    letterSpacing: "0.08em",
+                    margin: "0 0 4px 0",
+                  }}
+                >
+                  Find Out More
+                </p>
+                <p
+                  style={{
+                    ...B,
+                    fontSize: 10,
+                    color: "#8A7BA860",
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  lavenderist.com
+                </p>
+              </div>
+
+              <button
+                onClick={handleCopyLink}
+                style={{
+                  ...B,
+                  fontSize: 12,
+                  fontWeight: 500,
+                  color: "#8A7BA8",
+                  background: "#F8F5FC",
+                  border: "1px solid #E8E4EE",
+                  borderRadius: 20,
+                  padding: "8px 20px",
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                {copied ? "Copied!" : "Copy link"}
+              </button>
+            </div>
+          )}
+        </div>
+
         <div
           style={{
             width: 40,
@@ -1004,31 +1559,36 @@ function Result({ archetype }) {
           }}
         />
 
+        {/* CTA section */}
         {!done ? (
           !showE ? (
             <div>
               <p
                 style={{
-                  ...H,
-                  fontSize: "clamp(18px, 3.5vw, 22px)",
-                  color: "#2D2A33",
-                  margin: "0 0 6px 0",
-                  fontStyle: "italic",
+                  ...B,
+                  fontSize: "clamp(14px, 2.3vw, 15px)",
+                  color: "#5A5363",
+                  lineHeight: 1.7,
+                  margin: "0 0 20px 0",
                 }}
               >
-                Find them on Lavenderist.
+                Life partners, co-parents, deep companions, or something
+                entirely your own — we're building a space for connections like
+                yours.
               </p>
               <p
                 style={{
                   ...B,
-                  fontSize: 14,
-                  color: "#8A8494",
-                  margin: "0 0 24px 0",
-                  lineHeight: 1.6,
+                  fontSize: 13,
+                  color: "#9E96A8",
+                  lineHeight: 1.65,
+                  margin: "0 0 28px 0",
+                  fontStyle: "italic",
                 }}
               >
-                We're building a platform designed for connections like yours.
-                Join the waitlist — we'll let you know when we launch.
+                This archetype is one thread. The full experience draws from
+                personality, astrology, cultural wisdom, and more — because the
+                patterns between them are where the real connections live.
               </p>
               <button
                 onClick={() => setShowE(true)}
@@ -1059,7 +1619,7 @@ function Result({ archetype }) {
               }}
             >
               <p style={{ ...B, fontSize: 13, color: "#8A8494" }}>
-                Join the waitlist — we'll let you know when it's time.
+                Join the waitlist — we'll be in touch when it's time.
               </p>
               <div style={{ display: "flex", width: "100%", maxWidth: 380 }}>
                 <input
@@ -1081,11 +1641,12 @@ function Result({ archetype }) {
                   }}
                   onFocus={(e) => (e.target.style.borderColor = "#9B87C2")}
                   onBlur={(e) => (e.target.style.borderColor = "#EDEBF0")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handleSignup();
+                  }}
                 />
                 <button
-                  onClick={() => {
-                    if (email.includes("@")) setDone(true);
-                  }}
+                  onClick={handleSignup}
                   style={{
                     ...B,
                     fontSize: 13,
@@ -1119,11 +1680,12 @@ function Result({ archetype }) {
             <p
               style={{ ...B, fontSize: 14, color: "#8A8494", lineHeight: 1.6 }}
             >
-              We'll reach out when the conditions are right.
+              We'll be in touch when it's time.
             </p>
           </div>
         )}
 
+        {/* Tradition legend */}
         <div
           style={{
             marginTop: 48,
@@ -1168,6 +1730,8 @@ function Result({ archetype }) {
   );
 }
 
+/* ───────────────────── APP ───────────────────── */
+
 export default function App() {
   const [stage, setStage] = useState("intro");
   const [qi, setQi] = useState(0);
@@ -1178,11 +1742,13 @@ export default function App() {
     growth: 0,
     care: 0,
   });
+  const [answers, setAnswers] = useState([]);
   const [arch, setArch] = useState(null);
+  const [topTrad, setTopTrad] = useState([]);
 
-  const handleAnswer = (tagsArray) => {
+  const handleAnswer = (selected, tagsList) => {
     const ns = { ...sc };
-    tagsArray.forEach((tags) => {
+    tagsList.forEach((tags) => {
       ns.passion += tags.passion || 0;
       ns.depth += tags.depth || 0;
       ns.stability += tags.stability || 0;
@@ -1190,10 +1756,40 @@ export default function App() {
       ns.care += tags.care || 0;
     });
     setSc(ns);
-    if (qi < QUESTIONS.length - 1) setQi(qi + 1);
-    else {
-      setArch(getArchetype(ns));
+    const newAnswers = [...answers, { selected, tagsList }];
+    setAnswers(newAnswers);
+
+    if (qi < QUESTIONS.length - 1) {
+      setQi(qi + 1);
+    } else {
+      const result = getArchetype(ns);
+      setArch(result);
+      setTopTrad(calcTopTraditions(newAnswers, result));
       setStage("result");
+    }
+  };
+
+  const handleBack = () => {
+    if (stage === "quiz" && qi === 0) {
+      setStage("intro");
+      setSc({ passion: 0, depth: 0, stability: 0, growth: 0, care: 0 });
+      setAnswers([]);
+      setQi(0);
+      return;
+    }
+    if (stage === "quiz" && qi > 0) {
+      const prevAnswer = answers[answers.length - 1];
+      const ns = { ...sc };
+      prevAnswer.tagsList.forEach((tags) => {
+        ns.passion -= tags.passion || 0;
+        ns.depth -= tags.depth || 0;
+        ns.stability -= tags.stability || 0;
+        ns.growth -= tags.growth || 0;
+        ns.care -= tags.care || 0;
+      });
+      setSc(ns);
+      setAnswers(answers.slice(0, -1));
+      setQi(qi - 1);
     }
   };
 
@@ -1210,6 +1806,7 @@ export default function App() {
             setStage("quiz");
             setQi(0);
             setSc({ passion: 0, depth: 0, stability: 0, growth: 0, care: 0 });
+            setAnswers([]);
           }}
         />
       )}
@@ -1219,9 +1816,12 @@ export default function App() {
           idx={qi}
           total={QUESTIONS.length}
           onAnswer={handleAnswer}
+          onBack={handleBack}
         />
       )}
-      {stage === "result" && <Result archetype={arch} />}
+      {stage === "result" && (
+        <Result archetype={arch} topTraditions={topTrad} answers={answers} />
+      )}
     </div>
   );
 }
