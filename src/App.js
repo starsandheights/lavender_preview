@@ -524,9 +524,9 @@ function Intro({ onStart }) {
             margin: 0,
           }}
         >
-          Life partners, co-parents, deep companions, or any arrangement that
-          makes sense to you. No explanation needed. Whatever it looks like,
-          this is the place to find a partner who walks your path.
+          Life partners, co-parents, spiritual companions, or any arrangement
+          that doesn't fit the box. No explanation needed. Whatever it looks
+          like, this is the place to find a partner who walks your path.
         </p>
       </div>
 
